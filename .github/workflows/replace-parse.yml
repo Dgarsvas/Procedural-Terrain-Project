@@ -27,7 +27,7 @@ jobs:
           mv -v -f ./Mygtukai/Assets ./Assets/Packages
           git add ./Assets/Packages
           git commit -m "updated base package"
-          rm ./Mygtukai
+          rm ./Mygtukai #this breaks because ./Mygtukai is a repository
 
       - name: Find and Replace float
         uses: jacobtomlinson/gha-find-replace@master
