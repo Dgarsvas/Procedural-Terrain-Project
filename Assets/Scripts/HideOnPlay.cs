@@ -9,6 +9,7 @@ public class HideOnPlay : MonoBehaviour
     {
         //TestTestTest
         Debug.Log("Hello world!");
+        Debug.Log("Hello world!");
         gameObject.SetActive(false);
         float.Parse("0.00");
         DateTime.Parse(DateTime.Now.ToString());
