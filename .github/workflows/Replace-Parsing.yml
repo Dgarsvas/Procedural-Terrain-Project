@@ -26,6 +26,6 @@ jobs:
           replace: TutoTOONS.SystemUtils.DateTimeParse($1)
           
         env:
-          DEFAULT_BRANCH: main
+          DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
