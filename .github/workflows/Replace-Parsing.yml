@@ -1,12 +1,27 @@
-name: My Workflow
+name: replace-parse
 on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Replace string
-        uses: frabert/replace-string-action@v1.2
-        with:
-          pattern: 'Hello, (\w+)!'
-          string: 'Hello, world!'
-          replace-with: 'I greet you, $1!'
+      - name: Checkout master 
+      - run: |
+          git config user.name "${{ secrets.GH_USER }}"
+          git config user.email "${{ secrets.GH_MAIL }}"
+          git checkout master
+
+      - name: Replace float
+      - shell: bash
+        run: |
+          find . -type f -name "*.cs" -print0 | xargs -0 sed -i 's/Hello World/Bye/g'
+        
+      - name: Update file and push to remote
+        run: |
+          
+          echo "Test push commit to the remote in the workflow" >> test.txt
+          git add -A
+          git commit -m "Replaced float.parse and DateTime.parse"
+          
+        env:
+          DEFAULT_BRANCH: master
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
