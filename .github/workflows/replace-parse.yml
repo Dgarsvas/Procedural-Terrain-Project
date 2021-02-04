@@ -7,11 +7,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Find and Replace
+      - name: Find and Replace float
         uses: jacobtomlinson/gha-find-replace@master
         with:
-          find: "Hello"
-          replace: "world"
+          find: "float.Parse"
+          replace: "TutoTOONS.MathUtils.ParseFloat"
+          include: "Assets/Scripts"
+          
+      - name: Find and Replace DateTime
+        uses: jacobtomlinson/gha-find-replace@master
+        with:
+          find: "DateTime.Parse"
+          replace: "TutoTOONS.SystemUtils.DateTimeParse"
+          include: "Assets/Scripts"
 
       - name: Commit files
         run: |

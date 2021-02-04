@@ -62,8 +62,8 @@ public class MapGenerator : MonoBehaviour
 
     public void DrawMapInEditor()
     {
-        float.Parse("0.00");
-        DateTime.Parse(DateTime.Now.ToString());
+        TutoTOONS.MathUtils.ParseFloat("0.00");
+        TutoTOONS.SystemUtils.DateTimeParse(DateTime.Now.ToString());
         MapData mapData = GenerateMapData(Vector2.zero);
         MapDisplay display = FindObjectOfType<MapDisplay>();
         if (drawMode == DrawMode.NoiseMap)
@@ -87,7 +87,7 @@ public class MapGenerator : MonoBehaviour
         {
             MapDataThread(center, callback);
         };
-        float.Parse("0.00");
+        TutoTOONS.MathUtils.ParseFloat("0.00");
         //TestTestTest
         new Thread(threadStart).Start();
     }
