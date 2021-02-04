@@ -20,7 +20,7 @@ jobs:
         with:
           repository: Dgarsvas/Mygtukai
           path: ./Mygtukai
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.MY_PAT }}
       
       - name: Import base package then remove it
         run: |
