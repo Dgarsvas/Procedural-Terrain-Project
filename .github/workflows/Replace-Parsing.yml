@@ -4,9 +4,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Find and Replace
-        uses: jacobtomlinson/gha-find-replace@master
+      - name: Replace string
+        uses: frabert/replace-string-action@v1.2
         with:
-          find: "TestTestTest"
-          replace: "success"
+          pattern: 'Hello, (\w+)!'
+          string: 'Hello, world!'
+          replace-with: 'I greet you, $1!'
