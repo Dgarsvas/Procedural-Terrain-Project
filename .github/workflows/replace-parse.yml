@@ -7,11 +7,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Replace float
-        shell: bash
-        run: |
-          echo test > GENERATED.txt
-          find . -type f -name "*.cs" -print0 | xargs -0 sed -i 's/Hello World/Bye/g'
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@master
+        with:
+          find: "hello"
+          replace: "world"
 
       - name: Commit files
         run: |
