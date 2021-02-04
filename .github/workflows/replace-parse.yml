@@ -1,0 +1,24 @@
+name: replace-parse
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v2
+        env:
+          DEFAULT_BRANCH: master
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Replace float
+      - shell: bash
+        run: |
+          find . -type f -name "*.cs" -print0 | xargs -0 sed -i 's/Hello World/Bye/g'
+        
+      - uses: actions/checkout@v2
+      - run: |
+          date > generated.txt
+          git config user.name ${{ secrets.GH_USER }}
+          git config user.email ${{ secrets.GH_MAIL }}
+          git add -A
+          git commit -m "Replaced float.parse and DateTime.parse"
+          git push
