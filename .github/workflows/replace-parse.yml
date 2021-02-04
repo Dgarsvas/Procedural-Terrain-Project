@@ -17,7 +17,7 @@ jobs:
           
       - name: push changes
         run: |
-          date > generated.txt
+          date >> generated.txt
           git config user.name ${{ secrets.GH_USER }}
           git config user.email ${{ secrets.GH_MAIL }}
           git add -A
