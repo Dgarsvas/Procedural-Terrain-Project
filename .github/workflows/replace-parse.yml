@@ -15,6 +15,17 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git checkout -b generated-branch
 
+      - name: Checkout base package   
+        uses: actions/checkout@master
+        with:
+          repository: tutotoons/TutoTOONS-Package
+          path: ./TutoTOONS-Package
+      
+      - name: Import base package then remove it
+        run: |
+          mv -f ./TutoTOONS-package/Assets/TutoTOONS ./Assets/Packages
+          rm -rf ./TutoTOONS-package/Assets/TutoTOONS
+
       - name: Find and Replace float
         uses: jacobtomlinson/gha-find-replace@master
         with:
