@@ -24,13 +24,7 @@ jobs:
       
       - name: Import base package then remove it
         run: |
-          echo "imported"
-          ls ./Mygtukai/Assets
-          echo "current"
-          ls ./Assets/Packages
-          mv -f ./Mygtukai/Assets ./Assets/Packages
-          echo "moved"
-          ls ./Assets/Packages
+          mv -f /Mygtukai/Assets /Assets/Packages
 
       - name: Find and Replace float
         uses: jacobtomlinson/gha-find-replace@master
