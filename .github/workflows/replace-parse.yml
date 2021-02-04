@@ -20,7 +20,7 @@ jobs:
         with:
           repository: Dgarsvas/Mygtukai
           path: ./Mygtukai
-          github_token: ${{ secrets.MY_PAT }}
+          token: ${{ secrets.MY_PAT }}
       
       - name: Import base package then remove it
         run: |
@@ -48,7 +48,7 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.MY_PAT }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: generated-branch
 
       - name: pull-request
@@ -56,4 +56,4 @@ jobs:
         with:
           source_branch: "generated-branch"
           destination_branch: "master"
-          github_token: ${{ secrets.MY_PAT }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
