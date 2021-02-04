@@ -1,24 +1,12 @@
-name: Replace-Parsing
-
-on: push
-
+name: My Workflow
+on: [push, pull_request]
 jobs:
-  replace-parsing:
-    name: replace parsing
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-        
-      - name: Replace float parse
-        uses: jacobtomlinson/gha-find-replace@0.1.2
+      - uses: actions/checkout@v2
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@master
         with:
-          include: "/\\w*.cs/g"
           find: "TestTestTest"
-          replace: "Success"
-          
-        env:
-          DEFAULT_BRANCH: master
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
+          replace: "success"
