@@ -1,0 +1,6 @@
+apply plugin: 'safedk'
+safedk {
+  appId "*APP_ID*"
+  apiKey "*APP_KEY*"
+}
+//SAFEDKADDED

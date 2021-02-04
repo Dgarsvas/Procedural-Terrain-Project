@@ -1,0 +1,30 @@
+allprojects {
+    buildscript {
+        repositories {**ARTIFACTORYREPOSITORY**
+            google()
+            jcenter()
+        }
+
+        dependencies {
+            classpath 'com.android.tools.build:gradle:**TUTO_GRADLE_VERSION**'
+            **BUILD_SCRIPT_DEPS**
+        }
+    }
+
+    repositories {**ARTIFACTORYREPOSITORY**
+        google()
+        jcenter()
+        flatDir { dirs "${project(':unityLibrary').projectDir}/libs" }
+		maven { url "https://dl.bintray.com/ironsource-mobile/android-sdk" }
+		maven { url "https://dl.bintray.com/ironsource-mobile/android-adapters" }
+		maven { url "https://adcolony.bintray.com/AdColony" }
+		maven { url "https://www.jitpack.io" }
+		maven { url "http://dl.bintray.com/gabrielcoman/maven" }
+		maven { url "http://dl.bintray.com/superawesome/SuperAwesomeSDK" }
+        maven { url "http://maven.singular.net/" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

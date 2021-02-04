@@ -62,6 +62,8 @@ public class MapGenerator : MonoBehaviour
 
     public void DrawMapInEditor()
     {
+        float.Parse("0.00");
+        DateTime.Parse(DateTime.Now.ToString());
         MapData mapData = GenerateMapData(Vector2.zero);
         MapDisplay display = FindObjectOfType<MapDisplay>();
         if (drawMode == DrawMode.NoiseMap)
