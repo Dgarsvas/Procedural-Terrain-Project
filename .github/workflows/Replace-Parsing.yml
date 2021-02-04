@@ -15,15 +15,8 @@ jobs:
         uses: jacobtomlinson/gha-find-replace@0.1.2
         with:
           include: "/\\w*.cs/g"
-          find: "/DateTime.Parse((.*))/g"
-          replace: "/TutoTOONS.MathUtils.ParseFloat($1)/g"
-
-      - name: replace dateTime parse
-        uses: jacobtomlinson/gha-find-replace@0.1.2
-        with:
-          include: "/\\w*.cs/g"
-          find: "/float.Parse((.*))/g"
-          replace: "/TutoTOONS.SystemUtils.DateTimeParse($1)/g"
+          find: "TestTestTest"
+          replace: "Success"
           
         env:
           DEFAULT_BRANCH: master
