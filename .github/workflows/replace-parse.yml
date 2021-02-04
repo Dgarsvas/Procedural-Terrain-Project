@@ -37,11 +37,9 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: generated-branch
 
-      - name: Initialize Pull Request
-        uses: gha-utilities/init-pull-request@v0.2.2
+      - name: pull-request
+        uses: repo-sync/pull-request@v2
         with:
-          verbose: true
-          pull_request_token: ${{ secrets.GITHUB_TOKEN }}
-          head: generated-branch
-          base: master
-          title: 'updated float.parse, DateTime.parse'
+          source_branch: "generated-branch"
+          destination_branch: "master"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
