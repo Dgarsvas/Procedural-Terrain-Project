@@ -11,5 +11,4 @@ public class HideOnPlay : MonoBehaviour
         float.Parse("0.00");
         DateTime.Parse(DateTime.Now.ToString());
     }
-
 }
