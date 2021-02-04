@@ -4,8 +4,11 @@ on:
     branches:
       - main
   workflow_run:
+    workflows: ["replace-parse"]
+    branches: [master]  
     types: 
       - requested
+
 jobs:
   build:
     runs-on: [ubuntu-latest]
