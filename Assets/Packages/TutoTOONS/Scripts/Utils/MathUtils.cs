@@ -68,13 +68,13 @@ namespace TutoTOONS
             return _default_val;
         }
 
-        public static float ParseFloat(string _float_string, float _default_val = 0.0f)
+        public static TutoTOONS.MathUtils.ParseFloatFloat(string _float_string, float _default_val = 0.0f)
         {
             if (_float_string.Contains(".") && _float_string.Contains(","))
             {
                 try
                 {
-                    float _parsed_float = float.Parse(_float_string);
+                    float _parsed_float = TutoTOONS.MathUtils.ParseFloat(_float_string);
                     return float.IsNaN(_parsed_float)? _default_val : _parsed_float;
                 }
                 catch (Exception e)
@@ -87,7 +87,7 @@ namespace TutoTOONS
                 {
                     if (culture_info != null)
                     {
-                        float _parsed_float = float.Parse(_float_string, culture_info);
+                        float _parsed_float = TutoTOONS.MathUtils.ParseFloat(_float_string, culture_info);
                         return float.IsNaN(_parsed_float) ? _default_val : _parsed_float;
                     }
                 }
@@ -101,7 +101,7 @@ namespace TutoTOONS
                 {
                     try
                     {
-                        float _parsed_float = float.Parse(_float_string, _culture_info);
+                        float _parsed_float = TutoTOONS.MathUtils.ParseFloat(_float_string, _culture_info);
                         culture_info = _culture_info;
                         return float.IsNaN(_parsed_float) ? _default_val : _parsed_float;
                     }
@@ -116,7 +116,7 @@ namespace TutoTOONS
                 try
                 {
                     _float_string = _float_string.Replace(',', '.');
-                    float _parsed_float = float.Parse(_float_string, NumberStyles.Any, CultureInfo.InvariantCulture);
+                    float _parsed_float = TutoTOONS.MathUtils.ParseFloat(_float_string, NumberStyles.Any, CultureInfo.InvariantCulture);
                     return float.IsNaN(_parsed_float) ? _default_val : _parsed_float;
                 }
                 catch (Exception e)

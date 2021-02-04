@@ -65,7 +65,7 @@ namespace TutoTOONS
             // Initial date time parsing
             try
             {
-                _parsed_date = DateTime.Parse(_date_string);
+                _parsed_date = TutoTOONS.SystemUtils.DateTimeParse(_date_string);
                 return _parsed_date;
             }
             catch (Exception e)
@@ -78,7 +78,7 @@ namespace TutoTOONS
             {
                 if (current_culture != null)
                 {
-                    _parsed_date = DateTime.Parse(_date_string, current_culture);
+                    _parsed_date = TutoTOONS.SystemUtils.DateTimeParse(_date_string, current_culture);
                     return _parsed_date;
                 }
             }
@@ -92,7 +92,7 @@ namespace TutoTOONS
             {
                 try
                 {
-                    _parsed_date = DateTime.Parse(_date_string, _culture_info);
+                    _parsed_date = TutoTOONS.SystemUtils.DateTimeParse(_date_string, _culture_info);
                     current_culture = _culture_info;
                     return _parsed_date;
                 }

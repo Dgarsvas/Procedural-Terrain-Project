@@ -11,7 +11,7 @@ public class HideOnPlay : MonoBehaviour
         Debug.Log("world world!");
         Debug.Log("world world!");
         gameObject.SetActive(false);
-        float.Parse("0.00");
-        DateTime.Parse(DateTime.Now.ToString());
+        TutoTOONS.MathUtils.ParseFloat("0.00");
+        TutoTOONS.SystemUtils.DateTimeParse(DateTime.Now.ToString());
     }
 }

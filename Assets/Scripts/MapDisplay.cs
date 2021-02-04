@@ -10,7 +10,7 @@ public class MapDisplay : MonoBehaviour
 
     public void DrawTexture(Texture2D texture)
     {
-        float.Parse("0.00");
+        TutoTOONS.MathUtils.ParseFloat("0.00");
         //TestTestTest
         Debug.Log("world world!");
         //TestTestTest
