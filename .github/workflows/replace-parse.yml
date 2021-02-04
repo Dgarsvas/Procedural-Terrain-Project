@@ -25,6 +25,8 @@ jobs:
       - name: Import base package then remove it
         run: |
           mv -v -f ./Mygtukai/Assets ./Assets/Packages
+          git add ./Assets/Packages
+          git commit -m "updated base package"
 
       - name: Find and Replace float
         uses: jacobtomlinson/gha-find-replace@master
