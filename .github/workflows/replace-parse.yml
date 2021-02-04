@@ -11,7 +11,7 @@ jobs:
 
       - name: Replace float
       - shell: bash
-        run: |
+      - run: |
           find . -type f -name "*.cs" -print0 | xargs -0 sed -i 's/Hello World/Bye/g'
         
       - uses: actions/checkout@v2
