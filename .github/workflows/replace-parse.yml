@@ -24,22 +24,27 @@ jobs:
       
       - name: Import base package then remove it
         run: |
+          echo "imported"
+          ls ./Mygtukai/Assets
+          echo "current"
+          ls ./Assets/Packages
           mv -f ./Mygtukai/Assets ./Assets/Packages
-          rm -rf ./Mygtukai
+          echo "moved"
+          ls ./Assets/Packages
 
       - name: Find and Replace float
         uses: jacobtomlinson/gha-find-replace@master
         with:
           find: "float.Parse"
           replace: "TutoTOONS.MathUtils.ParseFloat"
-          include: "Assets/Scripts"
+          include: "./Assets/Scripts"
           
       - name: Find and Replace DateTime
         uses: jacobtomlinson/gha-find-replace@master
         with:
           find: "DateTime.Parse"
           replace: "TutoTOONS.SystemUtils.DateTimeParse"
-          include: "Assets/Scripts"
+          include: "./Assets/Scripts"
 
       - name: Commit files
         run: |
