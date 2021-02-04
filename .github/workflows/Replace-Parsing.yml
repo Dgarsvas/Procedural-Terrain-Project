@@ -14,16 +14,16 @@ jobs:
       - name: Replace float parse
         uses: jacobtomlinson/gha-find-replace@0.1.2
         with:
-          include: .cs
-          find: DateTime.Parse\((.*)\)
+          include: "*.cs"
+          find: "/DateTime.Parse((.*))/g"
           replace: TutoTOONS.MathUtils.ParseFloat($1)
           
       - name: replace dateTime parse
         uses: jacobtomlinson/gha-find-replace@0.1.2
         with:
-          include: .cs
-          find: float.Parse\((.*)\)
-          replace: TutoTOONS.SystemUtils.DateTimeParse($1)
+          include: "*.cs"
+          find: "/float.Parse((.*))/g"
+          replace: "TutoTOONS.SystemUtils.DateTimeParse($1)"
           
         env:
           DEFAULT_BRANCH: master
