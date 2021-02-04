@@ -1,5 +1,11 @@
 name: replace-parse
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+  workflow_run:
+    types: 
+      - requested
 jobs:
   build:
     runs-on: [ubuntu-latest]
