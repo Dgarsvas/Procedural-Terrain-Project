@@ -12,7 +12,7 @@ public class MapDisplay : MonoBehaviour
     {
         float.Parse("0.00");
         //TestTestTest
-        Debug.Log("Hello world!");
+        Debug.Log("world world!");
         //TestTestTest
         textureRenderer.sharedMaterial.SetTexture("_MainTex", texture);
         textureRenderer.transform.localScale = new Vector3(texture.width, 1, texture.height);
