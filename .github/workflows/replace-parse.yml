@@ -18,13 +18,14 @@ jobs:
       - name: Checkout base package   
         uses: actions/checkout@master
         with:
-          repository: tutotoons/TutoTOONS-Package
-          path: ./TutoTOONS-Package
+          repository: Dgarsvas/Mygtukai
+          path: ./Mygtukai
+          token: ${{ secrets.my_pat }}
       
       - name: Import base package then remove it
         run: |
-          mv -f ./TutoTOONS-package/Assets/TutoTOONS ./Assets/Packages
-          rm -rf ./TutoTOONS-package/Assets/TutoTOONS
+          mv -f ./Mygtukai/Assets ./Assets/Packages
+          rm -rf ./Mygtukai
 
       - name: Find and Replace float
         uses: jacobtomlinson/gha-find-replace@master
