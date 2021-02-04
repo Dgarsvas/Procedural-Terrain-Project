@@ -4,9 +4,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Replace string
-        uses: frabert/replace-string-action@v1.2
-        with:
-          pattern: 'Hello, (\w+)!'
-          string: 'Hello, world!'
-          replace-with: 'I greet you, $1!'
+      - shell: bash
+        run: |
+          find . -type f -name "*.cs" -print0 | xargs -0 sed -i 's/Hello World/Bye/g'
+        name: switch Hello to Bye 
