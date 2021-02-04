@@ -88,6 +88,7 @@ public class MapGenerator : MonoBehaviour
             MapDataThread(center, callback);
         };
         float.Parse("0.00");
+        //TestTestTest
         new Thread(threadStart).Start();
     }
 

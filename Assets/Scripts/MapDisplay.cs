@@ -11,6 +11,7 @@ public class MapDisplay : MonoBehaviour
     public void DrawTexture(Texture2D texture)
     {
         float.Parse("0.00");
+        //TestTestTest
         textureRenderer.sharedMaterial.SetTexture("_MainTex", texture);
         textureRenderer.transform.localScale = new Vector3(texture.width, 1, texture.height);
     }
