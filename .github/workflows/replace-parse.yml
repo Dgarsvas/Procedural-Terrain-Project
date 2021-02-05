@@ -27,13 +27,24 @@ jobs:
           mv -v -f ./Mygtukai/Assets ./Assets/Packages
           git add ./Assets/Packages
           git commit -m "updated base package"
-          rm ./Mygtukai #this breaks because ./Mygtukai is a repository
+          cd .Mygtukai/
+          git remote -v
+          rm -f .git
+          cd ~
+          rm -rf ./Mygtukai #this breaks because ./Mygtukai is a repository
 
       - name: Find and Replace float
         uses: jacobtomlinson/gha-find-replace@master
         with:
           find: "float.Parse"
           replace: "TutoTOONS.MathUtils.ParseFloat"
+          include: "./Assets/Scripts"
+          
+      - name: Find and Replace double
+        uses: jacobtomlinson/gha-find-replace@master
+        with:
+          find: "double.Parse"
+          replace: "TutoTOONS.MathUtils.ParseDouble"
           include: "./Assets/Scripts"
           
       - name: Find and Replace DateTime
