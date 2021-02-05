@@ -29,10 +29,14 @@ jobs:
           git commit -m "updated base package"
           cd Mygtukai
           git remote rm origin
-          git remote -v
           cd ..
           rm -rf Mygtukai
-          ls
+          
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: generated-branch
 
       - name: Find and Replace float
         uses: jacobtomlinson/gha-find-replace@master
@@ -57,6 +61,8 @@ jobs:
 
       - name: Commit files
         run: |
+          echo "generated file, can be deleted" >> GENERATED_FILE.txt
+          git status
           git commit -a -m "Automatic replacement changes for float.Parse and DateTime.parse"          
 
       - name: Push changes
