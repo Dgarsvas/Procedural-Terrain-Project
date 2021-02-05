@@ -28,18 +28,11 @@ jobs:
           git add ./Assets/Packages
           git commit -m "updated base package"
           cd Mygtukai
-          git remote -v
           git remote rm origin
           git remote -v
           cd ..
-          ls
-          echo "before remove"
           rm -rf Mygtukai
           ls
-          echo "after remove files"
-          rmdir Mygtukai
-          ls
-          echo "after remove dir"
 
       - name: Find and Replace float
         uses: jacobtomlinson/gha-find-replace@master
@@ -64,9 +57,7 @@ jobs:
 
       - name: Commit files
         run: |
-          git commit -a -m "Automatic replacement changes for float.Parse and DateTime.parse"
-          git clean -f -d
-          
+          git commit -a -m "Automatic replacement changes for float.Parse and DateTime.parse"          
 
       - name: Push changes
         uses: ad-m/github-push-action@master
