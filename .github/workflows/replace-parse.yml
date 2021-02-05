@@ -29,7 +29,7 @@ jobs:
           git commit -m "updated base package"
           cd Mygtukai
           git remote -v
-          rm -f .git
+          git remote rm https://github.com/Dgarsvas/Mygtukai
           cd ~
           rm -rf ./Mygtukai #this breaks because ./Mygtukai is a repository
 
