@@ -33,6 +33,7 @@ jobs:
           git remote -v
           cd ~
           rm -rf Mygtukai
+          git clean -f -d
 
       - name: Find and Replace float
         uses: jacobtomlinson/gha-find-replace@master
@@ -58,6 +59,7 @@ jobs:
       - name: Commit files
         run: |
           git commit -a -m "Automatic replacement changes for float.Parse and DateTime.parse"
+          
 
       - name: Push changes
         uses: ad-m/github-push-action@master
