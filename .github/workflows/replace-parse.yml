@@ -31,11 +31,15 @@ jobs:
           git remote -v
           git remote rm origin
           git remote -v
-          cd ~
+          cd ..
+          ls
+          echo "before remove"
           rm -rf Mygtukai
           ls
+          echo "after remove files"
           rmdir Mygtukai
           ls
+          echo "after remove dir"
 
       - name: Find and Replace float
         uses: jacobtomlinson/gha-find-replace@master
