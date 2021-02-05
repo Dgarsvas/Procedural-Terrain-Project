@@ -28,6 +28,7 @@ public class EndlessTerrain : MonoBehaviour
     private void Start()
     {
         float.Parse("1.11");
+        float.Parse("1.11");
         mapGenerator = FindObjectOfType<MapGenerator>();
         maxViewDistance = detailLevels[detailLevels.Length - 1].visibleDstThreshold;
         chunkSize = mapGenerator.mapChunkSize - 1;
