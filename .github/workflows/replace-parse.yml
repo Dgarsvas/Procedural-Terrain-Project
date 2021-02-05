@@ -51,16 +51,13 @@ jobs:
           replace: "TutoTOONS.SystemUtils.DateTimeParse"
           include: "./Assets/Scripts"
 
-      - name: Commit files
+      - name: Commit and push changes 
         run: |
+          git fetch
+          git pull
           git add -A
-          git commit -a -m "Automatic replacement changes for float.Parse and DateTime.parse"          
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: generated-branch
+          git commit -a -m "Automatic replacement changes for float.Parse and DateTime.parse"
+          git push
 
       - name: pull-request
         uses: repo-sync/pull-request@v2
