@@ -32,7 +32,7 @@ jobs:
           git remote rm origin
           git remote -v
           cd ~
-          rm -rf ./Mygtukai
+          rm -rf Mygtukai
 
       - name: Find and Replace float
         uses: jacobtomlinson/gha-find-replace@master
