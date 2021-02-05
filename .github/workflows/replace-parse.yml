@@ -29,9 +29,10 @@ jobs:
           git commit -m "updated base package"
           cd Mygtukai
           git remote -v
-          git remote rm https://github.com/Dgarsvas/Mygtukai
+          git remote rm origin
+          git remote -v
           cd ~
-          rm -rf ./Mygtukai #this breaks because ./Mygtukai is a repository
+          rm -rf ./Mygtukai
 
       - name: Find and Replace float
         uses: jacobtomlinson/gha-find-replace@master
