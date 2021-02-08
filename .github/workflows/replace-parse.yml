@@ -20,21 +20,21 @@ jobs:
         with:
           find: "float.Parse"
           replace: "TutoTOONS.MathUtils.ParseFloat"
-          include: "./Assets/Scripts"
+          include: "/Assets/Scripts"
           
       - name: Find and Replace double
         uses: jacobtomlinson/gha-find-replace@master
         with:
           find: "double.Parse"
           replace: "TutoTOONS.MathUtils.ParseDouble"
-          include: "./Assets/Scripts"
+          include: "/Assets/Scripts"
           
       - name: Find and Replace DateTime
         uses: jacobtomlinson/gha-find-replace@master
         with:
           find: "DateTime.Parse"
           replace: "TutoTOONS.SystemUtils.DateTimeParse"
-          include: "./Assets/Scripts"
+          include: "/Assets/Scripts"
 
       - name: Commit files
         run: |
