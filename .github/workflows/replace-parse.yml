@@ -15,21 +15,6 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git checkout -b generated-branch
 
-      - name: Checkout base package   
-        uses: actions/checkout@master
-        with:
-          repository: Dgarsvas/Mygtukai
-          path: ./Mygtukai
-          token: ${{ secrets.MY_PAT }}
-      
-      - name: Import base package then remove it
-        run: |
-          mv -v -f ./Mygtukai/Assets ./Assets/Packages
-          cd Mygtukai
-          git remote rm origin
-          cd ..
-          rm -rf Mygtukai
-
       - name: Find and Replace float
         uses: jacobtomlinson/gha-find-replace@master
         with:
@@ -51,13 +36,15 @@ jobs:
           replace: "TutoTOONS.SystemUtils.DateTimeParse"
           include: "./Assets/Scripts"
 
-      - name: Commit and push changes 
+      - name: Commit files
         run: |
-          git fetch
-          git pull
-          git add -A
           git commit -a -m "Automatic replacement changes for float.Parse and DateTime.parse"
-          git push
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: generated-branch
 
       - name: pull-request
         uses: repo-sync/pull-request@v2
